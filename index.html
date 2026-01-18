@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bocil Sayang Tante ❤️</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      id="landing-overlay"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #2d3436;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.8s ease;
+      "
+    >
+      <h1
+        style="
+          color: white;
+          font-family: 'Poppins', sans-serif;
+          font-size: 1.5rem;
+          text-align: center;
+          margin-bottom: 20px;
+        "
+      >
+        Hai, Garynkuuu. 👋<br /><span
+          style="font-size: 1rem; font-weight: normal; color: #b2bec3"
+          >Aku buat ini spesial lhoo</span
+        >
+      </h1>
+      <button
+        onclick="startExperience()"
+        style="
+          padding: 15px 40px;
+          border-radius: 50px;
+          background: #6c5ce7;
+          color: white;
+          border: none;
+          font-weight: bold;
+          font-size: 1.2rem;
+          cursor: pointer;
+          box-shadow: 0 0 20px rgba(108, 92, 231, 0.5);
+        "
+      >
+        Semoga sukaa 🥳
+      </button>
+    </div>
+
+    <div class="hearts-bg" id="hearts-container"></div>
+    <button id="music-fab" class="music-fab" onclick="toggleMusic()">🎵</button>
+
+    <main class="wrapper">
+      <header class="hero glass-card">
+        <div class="profile-container">
+          <img src="image/fotox.jpg" alt="Birthday Girl" class="profile-pic" />
+          <div class="badge">Cie 23</div>
+        </div>
+        <h1 class="title">
+          Happy Birthday, <br /><span class="highlight"
+            >Garyn Fritzi Iswara</span
+          >!
+        </h1>
+        <p id="typing-text" class="subtitle"></p>
+      </header>
+
+      <section class="glass-card ldr-section">
+        <h3>📡 Connection Radar</h3>
+        <div class="ldr-display">
+          <div class="location-dot">
+            <span class="city-name">Bekasi</span>
+            <div class="pulse"></div>
+          </div>
+          <div class="distance-line">
+            <span id="distance-km" class="km-text">Calculating...</span>
+            <div class="plane-icon">❤️</div>
+          </div>
+          <div class="location-dot">
+            <span class="city-name">Mojokerto</span>
+            <div class="pulse"></div>
+          </div>
+        </div>
+        <p class="ldr-quote">
+          <span id="dist-val" style="display: none"></span> Satuan jarak
+          favoritku <b style="color: red">Cm</b> <b style="color: red">Km</b>.
+        </p>
+      </section>
+
+      <section class="glass-card">
+        <h3>📸 Our Memories</h3>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="image/foto11.jpeg" alt="Memory 1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="image/foto22.jpg" alt="Memory 2" />
+            </div>
+            <div class="swiper-slide">
+              <img src="image/fotoy.jpeg" alt="Memory 3" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section class="spotify-section glass-card">
+        <div class="header-music">
+          <h3>🎵 Lagu untukmuu</h3>
+          <div class="equalizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+        <div class="spotify-player">
+          <img
+            src="image/spotify-lyric.jpg"
+            alt="Album Art"
+            class="album-art"
+            id="album-art"
+          />
+          <div class="player-controls">
+            <p class="song-title">i'd like to watch you sleeping</p>
+            <div class="progress-bar"><div class="fill"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass-card">
+        <h3>⏳ Waktu Bersama</h3>
+        <div id="realtime-clock" class="clock-container">
+          <div class="time-box">
+            <span id="days">0</span><small>Days</small>
+          </div>
+          <div class="time-box">
+            <span id="hours">0</span><small>Hours</small>
+          </div>
+          <div class="time-box">
+            <span id="minutes">0</span><small>Mins</small>
+          </div>
+          <div class="time-box">
+            <span id="seconds">0</span><small>Secs</small>
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="stats-grid-fixed">
+          <div class="mini-stat">
+            <span class="mini-number">99%</span>
+            <span class="mini-label">Sabar</span>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-number">∞</span>
+            <span class="mini-label">Sayang</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass-card vn-section">
+        <h3>🎙️ Pesan Suara take ke 19</h3>
+        <div class="chat-bubble">
+          <div class="play-icon-vn" onclick="toggleVoiceNote(this)">▶</div>
+          <div class="waveform-visual">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <span class="vn-duration">Play Me</span>
+        </div>
+        <p class="vn-caption">Dengerin dulu ya, jangan diskip.</p>
+        <audio id="vn-audio" src="suarakuu.mp3"></audio>
+      </section>
+
+      <section class="message-section glass-card">
+        <h3>💌 Surat Penting</h3>
+
+        <div class="letter-content">
+          <p id="letter-text" class="typewriter-text"></p>
+        </div>
+
+        <button
+          id="btn-read-letter"
+          onclick="startTypingLetter()"
+          class="btn-read"
+        >
+          📩 BACA SURAT
+        </button>
+
+        <button
+          id="btn-open-gift"
+          onclick="openGift()"
+          class="btn-gift"
+          style="display: none"
+        >
+          🎁 KLIK UNTUK BUKA KADO
+        </button>
+      </section>
+
+      <section class="glass-card heartbeat-section">
+        <h3>💓 Feel My Heartbeat</h3>
+        <p class="instruction">
+          Tekan & Tahan tombol ini. <br />Bayangin ini detak jantungku pas gugup
+          salting 😛.
+        </p>
+        <button
+          id="heart-btn"
+          class="heart-btn"
+          ontouchstart="startVibrate()"
+          ontouchend="stopVibrate()"
+          onmousedown="startVibrate()"
+          onmouseup="stopVibrate()"
+        >
+          ❤️
+        </button>
+        <p id="vibrate-status" class="vibrate-status">Hold to connect...</p>
+      </section>
+
+      <footer>
+        <small
+          >Dicoding dengan <span style="color: red">❤</span> Cintaaa.</small
+        >
+      </footer>
+    </main>
+
+    <audio id="bg-music" loop>
+      <source src="lagu-kita.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
