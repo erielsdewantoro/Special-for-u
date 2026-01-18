@@ -3,7 +3,7 @@
    ========================================= */
 
 /* --- 1. CONFIGURATION --- */
-const startDate = new Date("2026-01-02T00:00:00");
+const startDate = new Date("2025-12-31T00:00:00");
 const typeText = "Garyn/Xia/Bocil/Siapapun Namamu...";
 
 // COORDINATES (Bekasi - Mojokerto)
@@ -289,4 +289,5 @@ setInterval(createHeart, 400);
 window.onload = function () {
   window.scrollTo(0, 0);
 };
+
 
