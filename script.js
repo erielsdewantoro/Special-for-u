@@ -256,7 +256,7 @@ function openGift() {
       <b>Kadonya nyusul yaa!</b><br>
       Love, Eriel.
     `,
-    imageUrl: "image/fotox.jpg", // Foto dia muncul disini
+    imageUrl: "fotox.jpg", // Foto dia muncul disini
     imageWidth: 100,
     imageHeight: 100,
     imageAlt: "Birthday Girl",
@@ -289,3 +289,4 @@ setInterval(createHeart, 400);
 window.onload = function () {
   window.scrollTo(0, 0);
 };
+
